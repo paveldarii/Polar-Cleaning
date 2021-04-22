@@ -4,12 +4,15 @@ import CreatePostForm from "../components/CreatePostForm";
 import PostsList from "../components/PostsList";
 import HeroJumbotron from "../components/HeroJumbotron";
 import GeneralInfo from "../components/GeneralInfo";
+import AboutSection from "../components/AboutSection";
 
 const Home = () => {
   return (
     <>
-      <HeroJumbotron />
-      <GeneralInfo />
+      <HeroJumbotron /> <hr />
+      <GeneralInfo /> <hr />
+      <AboutSection />
+      <hr />
       <Container fluid>
         <Row>
           <Col size="md-6">
