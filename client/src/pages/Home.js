@@ -7,6 +7,7 @@ import AboutSection from "../components/AboutSection";
 import ServiceCard from "../components/ServiceCard";
 import services from "../assets/services";
 import Wrapper from "../components/Wrapper";
+import HistoryVision from "../components/HistoryVision";
 console.log(services);
 const Home = () => {
   return (
@@ -26,6 +27,9 @@ const Home = () => {
           );
         })}
       </Wrapper>
+      <hr />
+      <HistoryVision />
+      <hr />
       <CreatePostForm />
       <PostsList />
     </>
