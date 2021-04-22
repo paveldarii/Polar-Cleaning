@@ -1,6 +1,6 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import {
   Navbar,
   Nav,
@@ -8,9 +8,6 @@ import {
   Form,
   FormControl,
   Button,
-  Dropdown,
-  DropdownButton,
-  ButtonGroup,
 } from "react-bootstrap";
 function NavBar() {
   const [store] = useStoreContext();

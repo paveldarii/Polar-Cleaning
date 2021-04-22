@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import NavBar from "./components/NavBar";
 import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 
@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <StoreProvider>
-          <Nav />
+          <NavBar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
