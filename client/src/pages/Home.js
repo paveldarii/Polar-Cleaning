@@ -1,11 +1,13 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
 import CreatePostForm from "../components/CreatePostForm";
 import PostsList from "../components/PostsList";
 import HeroJumbotron from "../components/HeroJumbotron";
 import GeneralInfo from "../components/GeneralInfo";
 import AboutSection from "../components/AboutSection";
-
+import ServiceCard from "../components/ServiceCard";
+import services from "../assets/services";
+import Wrapper from "../components/Wrapper";
+console.log(services);
 const Home = () => {
   return (
     <>
@@ -13,16 +15,19 @@ const Home = () => {
       <GeneralInfo /> <hr />
       <AboutSection />
       <hr />
-      <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <CreatePostForm />
-          </Col>
-          <Col size="md-6">
-            <PostsList />
-          </Col>
-        </Row>
-      </Container>
+      <Wrapper>
+        {services.map((service) => {
+          return (
+            <ServiceCard
+              title={service.title}
+              img={service.img}
+              description={service.description}
+            ></ServiceCard>
+          );
+        })}
+      </Wrapper>
+      <CreatePostForm />
+      <PostsList />
     </>
   );
 };
