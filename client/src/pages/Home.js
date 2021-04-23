@@ -9,7 +9,6 @@ import services from "../assets/services";
 import Wrapper from "../components/Wrapper";
 import HistoryVision from "../components/HistoryVision";
 import WhyUs from "../components/WhyUs";
-import HomeInfo from "../components/HomeInfo";
 
 const Home = () => {
   return (
