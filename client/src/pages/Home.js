@@ -9,13 +9,15 @@ import services from "../assets/services";
 import Wrapper from "../components/Wrapper";
 import HistoryVision from "../components/HistoryVision";
 import WhyUs from "../components/WhyUs";
+import HomeInfo from "../components/HomeInfo";
 
-console.log(services);
 const Home = () => {
   return (
     <>
       <HeroJumbotron /> <hr />
-      <GeneralInfo /> <hr />
+      <Wrapper>
+        <GeneralInfo /> <hr />
+      </Wrapper>
       <AboutSection />
       <hr />
       <Wrapper>
