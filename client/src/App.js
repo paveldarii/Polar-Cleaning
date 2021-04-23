@@ -6,6 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import NavBar from "./components/NavBar";
 import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
+import Booking from "./pages/Booking";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/booking" component={Booking} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
