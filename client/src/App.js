@@ -6,7 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import NavBar from "./components/NavBar";
 import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
-import Booking from "./pages/Booking";
+import Booking from "./pages/Booking/index.js";
 
 function App() {
   return (
