@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Wrapper from "../../components/Wrapper";
 import MyVerticallyCenteredModal from "./Success.js";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_POST, LOADING } from "../../utils/actions";
+import API from "../../utils/API";
+
 export default function Booking() {
+  const [state, dispatch] = useStoreContext();
   const [values, setValues] = useState({
     businessName: null,
     contactName: null,
@@ -12,7 +17,7 @@ export default function Booking() {
     description: null,
     attach: null,
   });
-  const [loading, setLoading] = useState(false);
+
   const [validated, setValidated] = useState(false);
   const [modalShow, setModalShow] = useState(false);
 
@@ -23,16 +28,18 @@ export default function Booking() {
       event.preventDefault();
     }
     if (form.checkValidity() === true) {
-      setModalShow(true);
-      setValues({
-        businessName: null,
-        contactName: null,
-        email: null,
-        phone: null,
-        address: null,
-        description: null,
-        attach: null,
-      });
+      API.savePost({
+        ...values,
+      })
+        .then((result) => {
+          dispatch({
+            type: ADD_POST,
+            post: result.data,
+          });
+          console.log(result);
+          setModalShow(true);
+        })
+        .catch((err) => console.log(err));
     }
 
     setValidated(true);
@@ -141,6 +148,7 @@ export default function Booking() {
         <MyVerticallyCenteredModal
           data={values}
           show={modalShow}
+          disabled={state.loading}
           onHide={() => setModalShow(false)}
         />
       </Form>
