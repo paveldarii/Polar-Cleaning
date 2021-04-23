@@ -11,7 +11,9 @@ export default function HeroJumbotron() {
         <li>Our Services are 100% Ensured.</li>
       </ul>
       <p>
-        <Button variant="primary">Get a Free Quote</Button>
+        <Button variant="primary" href="/booking">
+          Get a Free Quote
+        </Button>
       </p>
     </Jumbotron>
   );
