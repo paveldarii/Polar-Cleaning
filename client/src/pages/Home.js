@@ -8,6 +8,8 @@ import ServiceCard from "../components/ServiceCard";
 import services from "../assets/services";
 import Wrapper from "../components/Wrapper";
 import HistoryVision from "../components/HistoryVision";
+import WhyUs from "../components/WhyUs";
+
 console.log(services);
 const Home = () => {
   return (
@@ -30,6 +32,7 @@ const Home = () => {
       <hr />
       <HistoryVision />
       <hr />
+      <WhyUs></WhyUs>
       <CreatePostForm />
       <PostsList />
     </>
