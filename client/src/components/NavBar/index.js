@@ -1,20 +1,21 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
-
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import globalStyle from "../../utils/GlobalStyle";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 function NavBar() {
   const [store] = useStoreContext();
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">Polar Cleaning</Navbar.Brand>
+    <Navbar
+      expand="lg"
+      style={{
+        ...globalStyle.navBarTextStyle,
+        ...globalStyle.themeColor,
+      }}
+    >
+      <Navbar.Brand style={globalStyle.navBarTextStyle} href="/">
+        Polar Cleaning
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -29,10 +30,6 @@ function NavBar() {
           <Nav.Link href="/about">About Us</Nav.Link>
           <Nav.Link href="/contact">Contact Us</Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form>
       </Navbar.Collapse>
     </Navbar>
   );
