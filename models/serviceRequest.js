@@ -8,10 +8,7 @@ const serviceRequestSchema = new Schema({
   description: { type: String },
   businessName: { type: String },
   date: { type: Date, default: Date.now },
-  attach: {
-    data: Buffer,
-    contentType: String,
-  },
+  attach: { type: Buffer },
 });
 
 const ServiceRequest = mongoose.model("ServiceRequest", serviceRequestSchema);
