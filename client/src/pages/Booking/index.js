@@ -22,13 +22,18 @@ export default function Booking() {
   const [modalShow, setModalShow] = useState(false);
 
   const handleSubmit = (event) => {
+    //form data
     event.preventDefault();
+    const fd = new FormData();
+    fd.append("file", values.attach);
+    setValues({ ...values, attach: [fd] });
+    console.log(values);
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
     }
     if (form.checkValidity() === true) {
-      API.savePost({
+      API.saveServiceRequest({
         ...values,
       })
         .then((result) => {
@@ -137,8 +142,9 @@ export default function Booking() {
             <Form.File
               id="exampleFormControlFile1"
               label="Please attach photos or documents that will help describe your job. "
-              value={values.attach}
-              onChange={(e) => setValues({ ...values, attach: e.target.value })}
+              onChange={(e) =>
+                setValues({ ...values, attach: e.target.files[0] })
+              }
             />
           </Form.Group>
         </Form>
