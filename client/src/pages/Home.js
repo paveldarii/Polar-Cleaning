@@ -13,12 +13,9 @@ import WhyUs from "../components/WhyUs";
 const Home = () => {
   return (
     <>
-      <HeroJumbotron /> <hr />
-      <Wrapper>
-        <GeneralInfo /> <hr />
-      </Wrapper>
+      <HeroJumbotron />
+      <GeneralInfo />
       <AboutSection />
-      <hr />
       <Wrapper>
         {services.map((service) => {
           return (
