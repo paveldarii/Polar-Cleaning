@@ -1,10 +1,21 @@
 import React from "react";
-
+import {
+  centerText,
+  quaternaryTheme,
+  titleColor,
+} from "../../utils/GlobalStyle";
 export default function AboutSection() {
   return (
-    <div>
-      <h4>Welcome To Polar Cleaning</h4>
-      <h2>Cleaning Services in Columbus</h2>
+    <div
+      style={{
+        ...centerText,
+        ...quaternaryTheme,
+        paddingTop: "20px",
+        paddingBottom: "20px",
+      }}
+    >
+      <h4 style={titleColor}>Welcome To Polar Cleaning</h4>
+      <h2 style={{ color: "#0d7fb2" }}>Cleaning Services in Columbus</h2>
       <p>
         Polar Cleaning is an Columbus cleaning company that specialises in
         professional domestic & commercial services. We'll leave your house or

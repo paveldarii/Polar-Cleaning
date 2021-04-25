@@ -4,6 +4,6 @@ const serviceRequests = require("./serviceRequests");
 
 // Post routes
 router.use("/posts", postRoutes);
-router.use("/serviceRequest", serviceRequests);
+router.use("/serviceRequests", serviceRequests);
 
 module.exports = router;
