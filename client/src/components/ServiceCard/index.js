@@ -8,7 +8,10 @@ export default function ServiceCard(props) {
     history.push("/booking");
   };
   return (
-    <Card onClick={handleClick} style={{ width: "18rem", cursor: "pointer" }}>
+    <Card
+      onClick={handleClick}
+      style={{ width: "18rem", cursor: "pointer", margin: "10px 0 10px 0" }}
+    >
       <Image roundedCircle variant="top" src={props.img} alt={props.title} />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>

@@ -1,36 +1,60 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import globalStyle from "../../utils/GlobalStyle";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
+import logo from "../../assets/icons/logo.png";
 function NavBar() {
   const [store] = useStoreContext();
 
   return (
     <Navbar
       expand="lg"
+      fixed="top"
       style={{
         ...globalStyle.navBarTextStyle,
         ...globalStyle.themeColor,
+        padding: "3px",
       }}
     >
       <Navbar.Brand style={globalStyle.navBarTextStyle} href="/">
-        Polar Cleaning
+        <Image
+          style={{ height: "50px" }}
+          src={logo}
+          alt="Polar Cleaning"
+        ></Image>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <NavDropdown title="Services" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1"></NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Residential</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Commercial</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Get Quote</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href="/pricing">Pricing</Nav.Link>
-          <Nav.Link href="/about">About Us</Nav.Link>
-          <Nav.Link href="/contact">Contact Us</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+      <div
+        style={{
+          marginLeft: "auto",
+          fontSize: "16px",
+          lineHeight: "1.5",
+          fontWeight: "normal",
+        }}
+      >
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav "
+          style={{ color: "#002e6e" }}
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link style={{ color: "#002e6e" }} href="/pricing">
+              Residential
+            </Nav.Link>
+            <Nav.Link style={{ color: "#002e6e" }} href="/pricing">
+              Commercial
+            </Nav.Link>
+            <Nav.Link style={{ color: "#002e6e" }} href="/pricing">
+              Pricing
+            </Nav.Link>
+            <Nav.Link style={{ color: "#002e6e" }} href="/about">
+              About Us
+            </Nav.Link>
+            <Nav.Link style={{ color: "#002e6e" }} href="/contact">
+              Contact Us
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </div>
     </Navbar>
   );
 }
