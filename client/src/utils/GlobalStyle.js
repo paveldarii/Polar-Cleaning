@@ -4,14 +4,14 @@ var themeColor = "white";
 const style = {
   themeColor: { backgroundColor: themeColor },
   navBarTextStyle: {
-    fontFamily: "Times New Roman",
+    fontFamily: "Fira Sans, sans-serif",
   },
   homeHero: {
     //backgroundImage: `url(${homeHero})`,
-    fontFamily: "Times New Roman",
+    fontFamily: "",
     backgroundColor: "#bcd7ec",
     backgroundSize: "cover",
-    margin: 0,
+    margin: "50px 0 0 0 ",
     height: "60vh",
     color: "#515151",
   },
